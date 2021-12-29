@@ -1,0 +1,26 @@
+-
+	const previewLinks = [
+		{ name: 'О компании', href: 'about.html' },
+		{ name: 'Производство', href: 'index.html' },
+		{ name: 'Каталог', href: 'catalog.html' },
+		{ name: 'Портфолио', href: 'portfolio.html' },
+		{ name: 'Услуги', href: 'services.html' },
+		{ name: 'Технологии', href: 'index.html' },
+	];
+
+section.preview
+	div.preview__container.container
+		div.preview__wrapper
+			h2.preview__title Российский производитель мебели
+				span.preview__info
+					strong 20+
+						span более 20 лет <br> на рынке
+		ul.preview__list
+			each link in previewLinks
+				li.preview__item
+					a.preview__link(href=link.href)
+						span!= link.name
+						//- svg(width="12", height="8", aria-hidden="true")
+						//- 	use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+	div.preview__background(aria-hidden="true")
+		img(src="images/preview-background.jpg", alt="")

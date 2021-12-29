@@ -1,0 +1,153 @@
+-
+	const portfolioSlides = [
+		{
+			slide: {
+				title: 'Зал ожидания',
+				link: 'index.html',
+				image: { src: 'images/portfolio-swiper.jpg', alt: '' },
+				balloons: [
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-33", "y": "-4" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-8.5", "y": "3" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "4", "y": "7.5" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "29", "y": "8.2" }',
+					},
+				],
+			},
+		},
+		{
+			slide: {
+				title: 'Гостиная',
+				link: 'index.html',
+				image: { src: 'images/portfolio-swiper.jpg', alt: '' },
+				balloons: [
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-33", "y": "-4" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-8.5", "y": "3" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "4", "y": "7.5" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "29", "y": "8.2" }',
+					},
+				],
+			},
+		},
+		{
+			slide: {
+				title: 'Кухня',
+				link: 'index.html',
+				image: { src: 'images/portfolio-swiper.jpg', alt: '' },
+				balloons: [
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-33", "y": "-4" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-8.5", "y": "3" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "4", "y": "7.5" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "29", "y": "8.2" }',
+					},
+				],
+			},
+		},
+		{
+			slide: {
+				title: 'Спальная комната',
+				link: 'index.html',
+				image: { src: 'images/portfolio-swiper.jpg', alt: '' },
+				balloons: [
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-33", "y": "-4" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "-8.5", "y": "3" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "4", "y": "7.5" }',
+					},
+					{
+						title: 'Классическое офисное кресло',
+						text: 'Эко-кожа, ткань',
+						coordinates: '{ "x": "29", "y": "8.2" }',
+					},
+				],
+			},
+		},
+	];
+
+section.portfolio-home
+	div.container
+		p.portfolio-home__mobile-title.title: span Портфолио
+	div.portfolio-home__container.container
+		h2.portfolio-home__title Портфолио
+		div.portfolio-home__progress
+		div.portfolio-home__buttons
+			button.portfolio-home__button.portfolio-home__button--prev(type="button")
+				span.visually-hidden Предыдущий слайд
+				svg(width="38", height="18", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--portfolio-prev")
+			button.portfolio-home__button.portfolio-home__button--next(type="button")
+				span.visually-hidden Следующий слайд
+				svg(width="38", height="18", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--portfolio-next")
+	div.portfolio-home__swiper.swiper
+		ul.portfolio-home__list.swiper-wrapper
+			each item in portfolioSlides
+				li.item-portfolio-home.swiper-slide
+					div.item-portfolio-home__info
+						h3.item-portfolio-home__title!= item.slide.title
+						a.item-portfolio-home__link(href="index.html") Узнать больше
+					div.item-portfolio-home__image
+						img(src=item.slide.image.src, alt=item.slide.image.alt)
+					ul.item-portfolio-home__sub-list
+						each balloon in item.slide.balloons
+							li.item-portfolio-home__sub-item(data-balloon=balloon.coordinates)
+								div.item-portfolio-home__balloon
+									h4.item-portfolio-home__sub-title!= balloon.title
+									p.item-portfolio-home__sub-text!= balloon.text
+								div.item-portfolio-home__balloon-button
+									button.item-portfolio-home__sub-button
+										span

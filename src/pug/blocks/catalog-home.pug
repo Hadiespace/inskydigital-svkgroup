@@ -1,0 +1,69 @@
+-
+	const catalogHomeItems = [
+		{
+			title: 'Кабинеты',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image01.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Оперативная мебель',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image02.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Системы хранения',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image03.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Мягкая мебель: диваны и кресла',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image04.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Мебель индивидуального исполнения',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image05.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Офисные кресла и стулья',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-image06.jpg',
+				alt: '',
+			}
+		},
+	];
+
+section.catalog-home
+	div.catalog-home__container.container
+		h2.catalog-home__title.title: span Каталог мебели
+		ul.catalog-home__list
+			each item in catalogHomeItems
+				li.item-catalog-home
+					h3.item-catalog-home__title
+						a.item-catalog-home__link(href=item.href)
+							span!= item.title
+							svg(width="5", height="5", aria-hidden="true")
+								use(xlink:href="images/sprite-mono.svg#mono--")
+					div.item-catalog-home__image
+						img(src=item.image.src, alt=item.image.alt)
+		a.catalog-home__link.button(href="/")
+			span Весь каталог
+			svg(width="38", height="12", aria-hidden="true")
+				use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")

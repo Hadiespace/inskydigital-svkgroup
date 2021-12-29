@@ -1,0 +1,151 @@
+-
+	const productDescription = [
+		'Благодаря элегантному дизайну кресло гармонично впишется в любой интерьер.',
+		'Если вы хотите уединенности в пространстве с открытой планировкой, но при этом не хотите лишать себя возможности общаться с другими, то наше кресло — идеальный вариант...',
+	];
+
+	const productImages = [
+		{ src: 'images/catalog-swiper01.jpg', alt: ''},
+		{ src: 'images/catalog-swiper02.jpg', alt: ''},
+		{ src: 'images/catalog-swiper03.jpg', alt: ''},
+		{ src: 'images/catalog-swiper01.jpg', alt: ''},
+		{ src: 'images/catalog-swiper02.jpg', alt: ''},
+		{ src: 'images/catalog-swiper03.jpg', alt: ''},
+		{ src: 'images/catalog-swiper01.jpg', alt: ''},
+		{ src: 'images/catalog-swiper02.jpg', alt: ''},
+		{ src: 'images/catalog-swiper03.jpg', alt: ''},
+		{ src: 'images/catalog-swiper01.jpg', alt: ''},
+		{ src: 'images/catalog-swiper02.jpg', alt: ''},
+		{ src: 'images/catalog-swiper03.jpg', alt: ''},
+	];
+
+	const aboutProductInfo = [
+		{
+			name: 'Размеры',
+			content: `
+				<p>
+					Благодаря элегантному дизайну кресло гармонично впишется в любой интерьер.
+					Если вы хотите уединенности в пространстве с открытой планировкой,
+					но при этом не хотите лишать себя возможности общаться с другими,
+					то наше кресло — идеальный вариант... Благодаря элегантному дизайну кресло
+					гармонично впишется в любой интерьер. Если вы хотите уединенности в
+					пространстве с открытой планировкой, но при этом не хотите лишать себя
+					возможности общаться с другими, то наше кресло — идеальный вариант...
+				</p>
+			`,
+		},
+		{
+			name: 'Материалы и технология',
+			content: `
+				<p>
+					Благодаря элегантному дизайну кресло гармонично впишется в любой интерьер.
+					Если вы хотите уединенности в пространстве с открытой планировкой,
+					но при этом не хотите лишать себя возможности общаться с другими,
+					то наше кресло — идеальный вариант... Благодаря элегантному дизайну кресло
+					гармонично впишется в любой интерьер. Если вы хотите уединенности в
+					пространстве с открытой планировкой, но при этом не хотите лишать себя
+					возможности общаться с другими, то наше кресло — идеальный вариант...
+				</p>
+			`,
+		},
+	];
+
+	const moreProductItems = [
+		{
+			title: 'Кресло «Стримлайн»',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-another01.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Кресло «Комфорт»',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/catalog-another02.jpg',
+				alt: '',
+			},
+		},
+	];
+
+section.product
+	div.product__container.container
+		div.product__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			a(href="catalog.html")
+				span Каталог
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			a(href="catalog.html")
+				span Кресла
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Кресло Комфорт
+		h1.product__title.title: span Кресло комфорт
+		div.product__description.description-product
+			h2.description-product__title Описание
+			ul
+				each description in productDescription
+					li!= description
+		div.product__swiper
+			div.product-swiper.swiper
+				ul.product-swiper__wrapper.swiper-wrapper
+					each image in productImages
+						li.product-swiper__slide.swiper-slide
+							a(data-fslightbox="product", href=image.src)
+								img(src=image.src, alt=image.alt)
+			div.product-thumbs.swiper
+				ul.product-thumbs__wrapper.swiper-wrapper
+					each image in productImages
+						li.product-thumbs__slide.swiper-slide
+							img(src=image.src, alt=image.alt)
+			div.product__buttons
+				button.product__button.product__button--prev(type="button")
+					span.visually-hidden Предыдущий слайд
+					svg(width="10", height="17", aria-hidden="true")
+						use(xlink:href="images/sprite-mono.svg#mono--swiper-prev")
+				button.product__button.product__button--next(type="button")
+					span.visually-hidden Следующий слайд
+					svg(width="10", height="17", aria-hidden="true")
+						use(xlink:href="images/sprite-mono.svg#mono--swiper-next")
+		button.product__modal-open.button.modal-open(type="button")
+			span Оставить заявку
+			svg(width="38", height="12", aria-hidden="true")
+				use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+
+		div.product__info
+			b Из плавных, но четких линий складываются изящные очертания
+			p.
+				Изогнутая спинка этого кресла обеспечивает <br> надежную поддержку в области
+				поясницы. Синий цвет создает умиротворенную и притягательную атмосферу.
+
+	section.product__about.about-product
+		div.about-product__container.container
+			h2.about-product__title.title: span О товаре
+			ul.about-product__list
+				each info, index in aboutProductInfo
+					li.item-about-product
+						button.item-about-product__button(type="button", aria-expanded="false", aria-controls="info-" + index)
+							span!= info.name
+							span
+							span
+						div.item-about-product__content(id="info-" + index)!= info.content
+
+	section.product__more.more-products
+		div.more-products__container.container
+			h2.more-products__title.title: span Вам также может понравиться
+			ul.more-products__list
+				each item in moreProductItems
+					li.more-product
+						h3.more-product__title
+							a(href=item.href)!= item.title
+						div.more-product__image
+							img(src=item.image.src, alt=item.image.alt)
+						div.more-product__more.link(aria-hidden="true")
+							span Подробнее
+							svg(width="38", height="12", aria-hidden="true")
+								use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")

@@ -1,0 +1,29 @@
+section.question
+	div.question__container.container
+		h2.question__title.title: span Остались вопросы?
+		p.question__sub-title.
+			Оставьте заявку, и мы вышлем примеры цен на мебель и более подробную информацию о нас
+		form.question__form.form(action="send.php")
+			div.form__wrapper
+				input.form__input._req._name(id="question-name", type="text", name="name", placeholder="Введите ваше имя")
+				label.visually-hidden(for="question-name") Ваше имя
+				span.form__error-text Это поле обязательно к заполнению
+			div.form__wrapper
+				input.form__input._req._tel(id="question-phone", type="tel", name="phone", placeholder="Введите телефон")
+				label.visually-hidden(for="question-phone") Ваш номер телефона
+				span.form__error-text Это поле обязательно к заполнению
+			div.form__wrapper
+				input.form__input._req._email(id="question-email", type="text", name="email", placeholder="Введите e-mail")
+				label.visually-hidden(for="question-email") Ваш e-mail
+				span.form__error-text Это поле обязательно к заполнению
+			div.question__message-wrapper.form__wrapper
+				textarea.form__input(id="question-comment", name="message", placeholder="Сообщение")
+			div.question__consent.form__consent
+				input.visually-hidden._req(id="question-consent", type="checkbox", name="consent", checked, required)
+				label.form__label(for="question-consent").
+					Отправляя сообщение, вы соглашаетесь на обработку персональных данных
+					в соответствии с <a href="index.html">политикой компании</a>
+			button.question__submit.form__submit.button(type="submit")
+				span Отправить сообщение
+				svg(width="38", height="12", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")

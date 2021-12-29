@@ -1,0 +1,50 @@
+-
+	const servicesHomeItems = [
+		{
+			title: 'Изготовление мебели <br> по индивидуальным заказам',
+			href: 'services.html#service01',
+			image: {
+				src: 'images/service-image01.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Дизайн-проект',
+			href: 'services.html#service02',
+			image: {
+				src: 'images/service-image02.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Комплектация объектов под ключ',
+			href: 'services.html#service03',
+			image: {
+				src: 'images/service-image03.jpg',
+				alt: '',
+			}
+		},
+		{
+			title: 'Производство офисной мебели',
+			href: 'services.html#service04',
+			image: {
+				src: 'images/service-image04.jpg',
+				alt: '',
+			}
+		},
+	];
+
+section.services.services--home
+	div.services__container.container
+		h2.services__title.title: span Список услуг компании
+		ul.services__list
+			each item in servicesHomeItems
+				li.item-service
+					h3.item-service__title
+						a(href=item.href)!= item.title
+					div.item-service__image
+						img(src=item.image.src, alt=item.image.alt)
+					div.item-service__more.link(aria-hidden="true")
+						span Подробнее
+						svg(width="38", height="12")
+							use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")

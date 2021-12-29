@@ -1,0 +1,19 @@
+extends ../layout.pug
+
+block const
+	- const headerNoIndex = 'header--no-index';
+
+block meta
+	title Контакты | СВК ГРУППА
+	meta(name="description", content="Контакты")
+block head
+	link(rel="stylesheet", href="css/style.css?v=111")
+	link(rel="preload", href="fonts/ledger-400.woff2", as="font", crossorigin="anonymous")
+	link(rel="preload", href="fonts/manrope-500.woff2", as="font", crossorigin="anonymous")
+	link(rel="preload", href="fonts/manrope-700.woff2", as="font", crossorigin="anonymous")
+	link(rel="preload", href="fonts/manrope-800.woff2", as="font", crossorigin="anonymous")
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=5387c4b4-79a9-4252-b590-0f69b039d2bc&lang=ru_RU")
+block content
+	include ../blocks/contacts
+
+block prepend page-bottom

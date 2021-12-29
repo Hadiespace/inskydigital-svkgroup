@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block const
+	- const indexPage = true;
+	- const whiteHeader = 'header--white';
+
+block meta
+	title Главная | СВК ГРУППА
+	meta(name="description", content="Главная")
+block content
+	include ../blocks/preview
+	include ../blocks/constructor
+	include ../blocks/services-home
+	include ../blocks/catalog-home
+	include ../blocks/portfolio-home
+
+block prepend page-bottom

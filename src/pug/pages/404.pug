@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block const
+	- const headerNoIndex = 'header--no-index';
+
+block meta
+	title Страница не найдена | СВК ГРУППА
+	meta(name="description", content="Страница не найдена")
+block content
+	include ../blocks/not-found
+
+block prepend page-bottom

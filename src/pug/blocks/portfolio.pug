@@ -1,0 +1,106 @@
+-
+	const portfolioFilters = ['Все', 'Офисы', 'Центры', 'Гос. учреждения', 'Индивидуальные решения'];
+
+	const portfolioItems = [
+		{
+			title: 'Зал ожидания',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio01.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Операционно-кассовый зал',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio02.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Операционно-кассовый зал',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio03.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Музей современной России',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio04.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Зал ожидания',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio05.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Приемная президента',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio06.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Приемная госуслуг',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio07.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Приемная госуслуг',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio08.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Операционно-кассовый зал',
+			href: 'portfolio-work.html',
+			image: {
+				src: 'images/portfolio09.jpg',
+				alt: '',
+			},
+		},
+	];
+
+section.portfolio
+	div.portfolio__container.container
+		div.portfolio__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Портфолио
+		div.portfolio__wrapper
+			h1.portfolio__title.title: span Наши работы
+			div.portfolio__filters
+				each filter, index in portfolioFilters
+					if index === 0
+						button.portfolio__filter.portfolio__filter--current(type="button")!= filter
+					else
+						button.portfolio__filter(type="button")!= filter
+		ul.portfolio__list
+			each item in portfolioItems
+				li.item-portfolio
+					h3.item-portfolio__title
+						a(href=item.href)!= item.title
+					div.item-portfolio__image
+						img(src=item.image.src, alt=item.image.alt)
+					div.item-portfolio__more.link(aria-hidden="true")
+						span Подробнее
+						svg(width="38", height="12", aria-hidden="true")
+							use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+	include question

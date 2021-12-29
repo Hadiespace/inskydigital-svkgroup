@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block const
+	- const headerNoIndex = 'header--no-index';
+
+block meta
+	title Поиск по сайту | СВК ГРУППА
+	meta(name="description", content="Результаты поиска")
+block content
+	include ../blocks/result
+
+block prepend page-bottom

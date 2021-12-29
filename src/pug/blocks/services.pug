@@ -1,0 +1,110 @@
+-
+	const servicesItems = [
+		{
+			title: 'Изготовление мебели по индивидуальным заказам',
+			id: 'service01',
+			image: {
+				src: 'images/service-image01.jpg',
+				alt: '',
+			},
+			content: `
+				<h3>Заголовок</h3>
+				<h4>Подзаголовок</h4>
+				<big>Большой текст</big>
+				<p>Наборный текст</p>
+				<small>Мелкий текст</small>
+				<ul>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+				</ul>
+				<ol>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+					<li>Пункт</li>
+				</ol>
+				<a href="#">Ссылка</a>
+				<button type="button">Кнопка</button>
+				<b>Жирный текст</b>
+				<u>Подчеркнутый текст</u>
+			`,
+		},
+		{
+			title: 'Дизайн-проект',
+			id: 'service02',
+			image: {
+				src: 'images/service-image02.jpg',
+				alt: '',
+			},
+			content: `
+				<p>Дизайн-проект — это комплект документов и материалов определённого свойства,
+				а именно, характеризующих все отделочные решения по дизайну офиса, дома, квартиры
+				или отдельной комнаты. Прописывается всё, начиная с плана возведения новых перегородок
+				и заканчивая схемой подбора цветов для стен и мебели.</p>
+				<p>Дизайн-проект может быть выполнен в любом стиле от классики до модерна и включает
+				в себя несколько разделов, каждый из которых несёт свою смысловую нагрузку.</p>
+			`,
+		},
+		{
+			title: 'Комплектация объектов под ключ',
+			id: 'service03',
+			image: {
+				src: 'images/service-image03.jpg',
+				alt: '',
+			},
+			content: `
+				<p>Дизайн-проект — это комплект документов и материалов определённого свойства,
+				а именно, характеризующих все отделочные решения по дизайну офиса, дома, квартиры
+				или отдельной комнаты. Прописывается всё, начиная с плана возведения новых перегородок
+				и заканчивая схемой подбора цветов для стен и мебели.</p>
+				<p>Дизайн-проект может быть выполнен в любом стиле от классики до модерна и включает
+				в себя несколько разделов, каждый из которых несёт свою смысловую нагрузку.</p>
+			`,
+		},
+		{
+			title: 'Производство офисной мебели',
+			id: 'service04',
+			image: {
+				src: 'images/service-image04.jpg',
+				alt: '',
+			},
+			content: `
+				<p>Дизайн-проект — это комплект документов и материалов определённого свойства,
+				а именно, характеризующих все отделочные решения по дизайну офиса, дома, квартиры
+				или отдельной комнаты. Прописывается всё, начиная с плана возведения новых перегородок
+				и заканчивая схемой подбора цветов для стен и мебели.</p>
+				<p>Дизайн-проект может быть выполнен в любом стиле от классики до модерна и включает
+				в себя несколько разделов, каждый из которых несёт свою смысловую нагрузку.</p>
+			`,
+		},
+	];
+
+section.services
+	div.services__container.container
+		div.services__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Услуги
+		h1.services__title.title: span Наши услуги
+		ul.services__list.services__list--page
+			each item in servicesItems
+				li.services__item.item-service(id=item.id)
+					h2.item-service__title
+						a!= item.title
+					div.item-service__image
+						img(src=item.image.src, alt=item.image.alt)
+					div.item-service__wrapper!= item.content
+					div.item-service__more.link
+						span Подробнее
+						svg(width="38", height="12")
+							use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+						svg(width="14", height="9")
+							use(xlink:href="images/sprite-mono.svg#mono--arrow-top-small")
+
+	include question

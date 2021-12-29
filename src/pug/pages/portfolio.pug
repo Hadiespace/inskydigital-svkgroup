@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block const
+	- const headerNoIndex = 'header--no-index';
+
+block meta
+	title Наши работы | СВК ГРУППА
+	meta(name="description", content="Наши работы")
+block content
+	include ../blocks/portfolio
+
+block prepend page-bottom

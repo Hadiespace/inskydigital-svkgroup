@@ -1,0 +1,163 @@
+-
+	const portfolioWorkImages = [
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+		{ src: 'images/portfolio-swiper01.jpg', alt: '' },
+	];
+
+	const portfolioWorkInfo = [
+		{
+			title: 'Бюджет',
+			value: 'Конфиденциально',
+			image: {
+				src: 'images/portfolio-icon01.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Дата реализации',
+			value: '2019 — 2021',
+			image: {
+				src: 'images/portfolio-icon02.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Общая площадь',
+			value: '10 110 m<sup>2</sup>',
+			image: {
+				src: 'images/portfolio-icon03.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Заказчик',
+			value: 'Правительство Москвы',
+			image: {
+				src: 'images/portfolio-icon04.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Статус',
+			value: 'Завершено',
+			image: {
+				src: 'images/portfolio-icon05.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Местоположение',
+			value: 'Новая Москва',
+			image: {
+				src: 'images/portfolio-icon06.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Тип объекта',
+			value: 'Офисы',
+			image: {
+				src: 'images/portfolio-icon07.svg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Партнеры',
+			value: 'ПИК, Самолет',
+			image: {
+				src: 'images/portfolio-icon08.svg',
+				alt: '',
+			},
+		},
+	];
+
+section.portfolio-work
+	div.portfolio-work__top-container.container
+		div.portfolio-work__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			a(href="portfolio.html")
+				span Портфолио
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Дизайн интерьера дома
+		h1.portfolio-work__title.title: span Дизайн интерьера дома на рублево-успенском шоссе
+	div.portfolio-work__image
+		img(src="images/portfolio-preview.jpg", alt="")
+	div.portfolio-work__bottom-container.container
+		h2.portfolio-work__description-title Описание проекта
+		div.portfolio-work__description
+			p.
+				Обернутый сплошным фасадом из сетки, наш элегантный и прозрачный дизайн
+				гармонирует с зеленым окружением, воплощая новаторское видение благополучия на работе.
+			p.
+				Он также является частью чего-то большего: а именно, усовершенствованного ансамбля,
+				ориентированного на здоровье и устойчивое развитие, который он формирует вместе со
+				своим аналогом.
+		div.portfolio-work__swiper.swiper
+			ul.portfolio-work__swiper-wrapper.swiper-wrapper
+				each image in portfolioWorkImages
+					li.portfolio-work__swiper-slide.swiper-slide
+						img(src=image.src, alt=image.alt)
+			div.portfolio-work__buttons
+				button.portfolio-work__button.portfolio-work__button--prev(type="button")
+						span.visually-hidden Предыдущий слайд
+						svg(width="11", height="17", aria-hidden="true")
+							use(xlink:href="images/sprite-mono.svg#mono--swiper-prev")
+				button.portfolio-work__button.portfolio-work__button--next(type="button")
+					span.visually-hidden Следующий слайд
+					svg(width="11", height="17", aria-hidden="true")
+						use(xlink:href="images/sprite-mono.svg#mono--swiper-next")
+			div.portfolio-work__dots
+
+		section.portfolio-work__info.info-portfolio
+			h2.info-portfolio__title.title: span Информация о проекте
+			ul.info-portfolio__list
+				each info in portfolioWorkInfo
+					li.item-info-portfolio
+						h3.item-info-portfolio__title!= info.title
+						p.item-info-portfolio__value!= info.value
+						div.item-info-portfolio__icon(aria-hidden="true")
+							img(src=info.image.src, alt=info.image.alt)
+
+		section.portfolio-work__discuss.discuss-portfolio
+			h2.discuss-portfolio__title Обсудим ваш проект
+			p.discuss-portfolio__sub-title.
+				Готовы превратить свой дом в произведение искусства?
+				Оставьте ваш телефон и мы перезвоним в течение часа
+			form.discuss-portfolio__form.form(action="send.php")
+				div.form__wrapper
+					input.form__input._req._name(id="question-name", type="text", name="name", placeholder="Введите ваше имя")
+					label.visually-hidden(for="question-name") Ваше имя
+					span.form__error-text Это поле обязательно к заполнению
+				div.form__wrapper
+					input.form__input._req._tel(id="question-phone", type="tel", name="phone", placeholder="Введите телефон")
+					label.visually-hidden(for="question-phone") Ваш номер телефона
+					span.form__error-text Это поле обязательно к заполнению
+				div.discuss-portfolio__consent.form__consent
+					input.visually-hidden(id="question-consent", type="checkbox", name="consent", checked, required)
+					label.form__label(for="question-consent").
+						Отправляя сообщение, вы соглашаетесь на обработку персональных данных
+						в соответствии с <a href="index.html">политикой компании</a>
+				button.discuss-portfolio__submit.form__submit.button(type="submit")
+					span Отправить сообщение
+					svg(width="38", height="12", aria-hidden="true")
+						use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+
+		section.portfolio-work__next.next-portfolio
+			h2.next-portfolio__title
+				a(href="portfolio-work.html") Дизайн интерьера дома на рублево-успенском шоссе
+			div.next-portfolio__more.link(aria-hidden="true")
+				span Следующий проект
+				svg(width="38", height="12", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+			div.next-portfolio__image
+				img(src="images/portfolio-next.jpg", alt="")

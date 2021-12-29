@@ -1,0 +1,82 @@
+-
+	const catalogFilters = [
+		{ name: 'Кресла', href: '#catalog', icon: { src: 'images/catalog-icon01.svg', alt: '' } },
+		{ name: 'Стулья', href: '#catalog', icon: { src: 'images/catalog-icon02.svg', alt: '' } },
+		{ name: 'Столы', href: '#catalog', icon: { src: 'images/catalog-icon03.svg', alt: '' } },
+		{ name: 'Шкафы', href: '#catalog', icon: { src: 'images/catalog-icon04.svg', alt: '' } },
+		{ name: 'Тумбы', href: '#catalog', icon: { src: 'images/catalog-icon05.svg', alt: '' } },
+		{ name: 'Диваны', href: '#catalog', icon: { src: 'images/catalog-icon06.svg', alt: '' } },
+	];
+
+	const catalogItems = [
+		{
+			title: 'Стол переговоров овальный',
+			href: 'product.html',
+			size: 2,
+			image: {
+				src: 'images/catalog-item01.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Стол «Стримлайн»',
+			href: 'product.html',
+			size: 1,
+			image: {
+				src: 'images/catalog-item02.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Стол «Конференц»',
+			href: 'product.html',
+			size: 1,
+			image: {
+				src: 'images/catalog-item03.jpg',
+				alt: '',
+			},
+		},
+	];
+
+section.catalog
+	h1.visually-hidden Каталог
+	div.catalog__preview.preview-catalog
+		div.catalog__container.container
+			ul.preview-catalog__list
+				each filter, index in catalogFilters
+					if index === 0
+						li.preview-catalog__item.preview-catalog__item--current
+							a.preview-catalog__link(href=filter.href)
+								span!= filter.name
+								img(src=filter.icon.src, alt=filter.icon.alt)
+					else
+						li.preview-catalog__item
+							a.preview-catalog__link(href=filter.href)
+								span!= filter.name
+								img(src=filter.icon.src, alt=filter.icon.alt)
+		div.preview-catalog__background(aria-hidden="true")
+			img(src="images/catalog-background.jpg", alt="")
+	div.catalog__container.container
+		ul.catalog__list(id="catalog")
+			each item in catalogItems
+				if item.size === 1
+					li.item-catalog.item-catalog--short
+						h2.item-catalog__title
+							a(href=item.href)!= item.title
+						div.item-catalog__image
+							img(src=item.image.src, alt=item.image.alt)
+						div.item-catalog__more.link(aria-hidden="true")
+							span Подробно
+							svg(width="38", height="12")
+								use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+				else
+					li.item-catalog.item-catalog--long
+							h2.item-catalog__title
+								a(href=item.href)!= item.title
+							div.item-catalog__image
+								img(src=item.image.src, alt=item.image.alt)
+							div.item-catalog__more.link(aria-hidden="true")
+								span Подробно
+								svg(width="38", height="12")
+									use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+	include question

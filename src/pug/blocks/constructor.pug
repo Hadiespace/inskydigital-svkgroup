@@ -1,0 +1,73 @@
+-
+	const constructorImages = [
+		{ src: 'images/constructor/constructor01.png', alt: '' },
+		{ src: 'images/constructor/constructor02.png', alt: '' },
+		{ src: 'images/constructor/constructor03.png', alt: '' },
+		{ src: 'images/constructor/constructor04.png', alt: '' },
+		{ src: 'images/constructor/constructor05.png', alt: '' },
+		{ src: 'images/constructor/constructor06.png', alt: '' },
+		{ src: 'images/constructor/constructor07.png', alt: '' },
+		{ src: 'images/constructor/constructor08.png', alt: '' },
+		{ src: 'images/constructor/constructor09.png', alt: '' },
+		{ src: 'images/constructor/constructor10.png', alt: '' },
+		{ src: 'images/constructor/constructor11.png', alt: '' },
+		{ src: 'images/constructor/constructor12.png', alt: '' },
+		{ src: 'images/constructor/constructor13.png', alt: '' },
+	];
+
+		const constructorSlides = [
+		{
+			title: 'Стеллаж <br> для кабинета',
+			content: `Каскадный стеллаж на 12 ячеек в сером цвете.
+			Отличное решение для кабинета. Стеллаж поможет
+			в зонированнии пространства, размещении папок,
+			книг, элементов декора и офисных предметов.`,
+		},
+		{
+			title: 'Стеллаж <br> для кабинета',
+			content: `Каскадный стеллаж на 12 ячеек в сером цвете.
+			Отличное решение для кабинета. Стеллаж поможет
+			в зонированнии пространства, размещении папок,
+			книг, элементов декора и офисных предметов.`,
+		},
+		{
+			title: 'Стеллаж <br> для кабинета',
+			content: `Каскадный стеллаж на 12 ячеек в сером цвете.
+			Отличное решение для кабинета. Стеллаж поможет
+			в зонированнии пространства, размещении папок,
+			книг, элементов декора и офисных предметов.`,
+		},
+		{
+			title: 'Стеллаж <br> для кабинета',
+			content: `Каскадный стеллаж на 12 ячеек в сером цвете.
+			Отличное решение для кабинета. Стеллаж поможет
+			в зонированнии пространства, размещении папок,
+			книг, элементов декора и офисных предметов.`,
+		},
+		{
+			title: 'Стеллаж <br> для кабинета',
+			content: `Каскадный стеллаж на 12 ячеек в сером цвете.
+			Отличное решение для кабинета. Стеллаж поможет
+			в зонированнии пространства, размещении папок,
+			книг, элементов декора и офисных предметов.`,
+		},
+	];
+
+section.constructor
+	div.constructor__container.container
+		h2.visually-hidden Конструктор
+		div.constructor__sticky
+			ul.constructor__list
+				each image in constructorImages
+					li.constructor__item
+						img(src=image.src, alt=image.alt)
+			div.constructor__swiper
+				div.constructor__wrapper.swiper
+					ul.constructor__slides.swiper-wrapper
+						each slide in constructorSlides
+							li.constructor__slide.swiper-slide
+								h3!= slide.title
+								div
+									p!= slide.content
+				div.constructor__info
+

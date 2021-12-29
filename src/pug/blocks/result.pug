@@ -1,0 +1,66 @@
+-
+	const resultItems = [
+		{
+			title: 'Стол переговоров овальный',
+			href: 'product.html',
+			image: {
+				src: 'images/catalog-item01.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Стол «Стримлайн»',
+			href: 'product.html',
+			image: {
+				src: 'images/catalog-item02.jpg',
+				alt: '',
+			},
+		},
+		{
+			title: 'Стол «Конференц»',
+			href: 'product.html',
+			image: {
+				src: 'images/catalog-item03.jpg',
+				alt: '',
+			},
+		},
+	];
+
+section.result
+	div.result__container.container
+		div.result__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Поиск по сайту
+		h1.result__title.title: span Результаты поиска
+		div.result__search.search-result
+			p.search-result__text Не удалось ничего найти по запросу «sdfgsdfh»
+			form.search-result__form(action="result.html")
+				input.search-result__input(id="result-search", type="text", name="search", placeholder="Поискать что-то другое?")
+				button.search-result__button(type="submit")
+					span.visually-hidden Поиск по сайту
+					svg(width="28", height="27", aria-hidden="true")
+						use(xlink:href="images/sprite-mono.svg#mono--search")
+		div.result__content
+			p.result__text Найдено товаров: 24
+			ul.result__list
+				each item in resultItems
+					li.item-result
+						h2.item-result__title
+							a(href=item.href)!= item.title
+						div.item-result__image
+							img(src=item.image.src, alt=item.image.alt)
+						div.item-result__more.link(aria-hidden="true")
+							span Подробно
+							svg(width="38", height="12")
+								use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+			div.result__dots
+				a.result__dot.result__dot--current(href="result.html") 1
+				a.result__dot(href="result.html") 2
+				a.result__dot(href="result.html") 3
+				a.result__dot(href="result.html") 4
+				a.result__dot(href="result.html") 5
+				span.result__dot ...
+				a.result__dot(href="result.html") 10

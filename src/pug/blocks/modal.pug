@@ -1,0 +1,31 @@
+div.modal
+	div.modal__container.container
+		button.modal__close(type="button")
+			span.visually-hidden Закрыть модальное окно
+			span
+			span
+		form.modal__form.form-modal.form(action="send.php")
+			p.form-modal__title Заполните форму
+			p.form-modal__text И наш менеджер свяжется с вами в ближайшее время
+			div.form-modal__wrappers
+				div.form-modal__wrapper.form__wrapper
+					input.form__input._req._name(id="modal-name", type="text", name="name", placeholder="Введите ваше имя")
+					label.visually-hidden(for="modal-name") Ваше имя
+					span.form__error-text Это поле обязательно к заполнению
+				div.form__wrapper
+					input.form__input._req._tel(id="modal-phone", type="tel", name="phone", placeholder="Введите телефон")
+					label.visually-hidden(for="modal-phone") Ваш номер телефона
+					span.form__error-text Это поле обязательно к заполнению
+			div.form-modal__consent.form__consent
+				input.visually-hidden._req(id="modal-consent", type="checkbox", name="consent", checked, required)
+				label.form__label(for="modal-consent").
+					Отправляя сообщение, вы соглашаетесь на обработку персональных данных
+					в соответствии с <a href="/">политикой компании</a>
+			button.form-modal__submit.form__submit.button(type="submit")
+				span Оставить заявку
+				svg(width="38", height="12", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+
+		div.modal__success.success-modal
+			p.success-modal__title Спасибо!
+			p.success-modal__text Наш менеджер свяжется с вами в ближайшее время

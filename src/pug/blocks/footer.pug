@@ -1,0 +1,30 @@
+-
+	const footerLinks = [
+		{ name: 'Главная', href: 'index.html' },
+		{ name: 'Каталог', href: 'catalog.html' },
+		{ name: 'Услуги', href: 'services.html' },
+		{ name: 'Контакты', href: 'contacts.html' },
+		{ name: 'О нас', href: 'about.html' },
+	];
+
+footer.footer
+	div.footer__container.container
+		div.footer__top-wrapper
+			a.footer__contact.footer__contact--phone(href="tel:+7(499)702-31-31")
+				svg(width="14", height="21", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--mobile")
+				span +7 (499) 702-31-31
+			address.footer__contact.footer__contact--address
+				svg(width="16", height="23", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--address")
+				span г. Москва, ул. Часовая, дом 28, к. 4
+			ul.footer__list
+				each link in footerLinks
+					li.footer__item
+						a(href=link.href)!= link.name
+		div.footer__bottom-wrapper
+			a.footer__logo.logo(href="index.html")
+				img(src="images/logo.svg", alt="")
+			p.footer__copyright © 2021 «СВК Группа» Все права защищены.
+			a.footer__policy(href="index.html") Политика конфиденциальности
+			p.footer__developer Разработка сайта — <a href="index.html">Insky.digital</a>

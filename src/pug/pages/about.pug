@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block const
+	- const headerNoIndex = 'header--no-index';
+
+block meta
+	title О компании | СВК ГРУППА
+	meta(name="description", content="О компании")
+block content
+	include ../blocks/about
+
+block prepend page-bottom

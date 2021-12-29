@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block const
+	- const whiteHeader = 'header--white';
+
+block meta
+	title Каталог | СВК ГРУППА
+	meta(name="description", content="Каталог")
+block content
+	include ../blocks/catalog
+
+block prepend page-bottom

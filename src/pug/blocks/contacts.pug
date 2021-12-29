@@ -1,0 +1,51 @@
+section.contacts
+	div.contacts__container.container
+		div.contacts__crumbs.crumbs
+			a(href="index.html")
+				span Главная
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			a(href="about.html")
+				span О компании
+				svg(width="12", height="8", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-small")
+			span Контакты
+		h1.contacts__title.title: span Контакты
+		div.info-contacts.info-contacts--office
+			h2.info-contacts__title Офис
+			div.info-contact
+				h3 Адрес
+				address 119285, Москва, Воробьевское шоссе 6
+			div.info-contact
+				h3 Режим работы
+				p Пн. – Пт.: с 10:00 до 18:00 <br> Сб - Вс: выходные
+			div.info-contact
+				h3 Телефон
+				a(href="tel:+7(499)702-31-31") +7 (499) 702-31-31
+			div.info-contact
+				h3 E-mail
+				a(href="mailto:tpk.mebel.comp@gmail.com") tpk.mebel.comp@gmail.com
+			p.info-contacts__description.
+				В Москве находится основной офис компании. Обязательно приходите к нам.
+				Проконсультируем по интересующим товарам и поможем подобрать подходящий.
+			button.info-contacts__modal-open.button.modal-open(type="button")
+				span Написать сообщение
+				svg(width="38", height="12", aria-hidden="true")
+					use(xlink:href="images/sprite-mono.svg#mono--arrow-right-big")
+		div.contacts__map(id="map", data-lat="55.72706006902213", data-lng="37.53481949999999")
+			img(src="images/map.png", alt="121087, город Москва, Багратионовский пр-д, д. 7 к. 20а, этаж 7 офис 25")
+		div.info-contacts.info-contacts--legal
+			h2.info-contacts__title Юридический адрес
+			div.info-contact
+				h3 Адрес
+				address 121087, город Москва, Багратионовский пр-д, д. 7 к. 20а, этаж 7 офис 25
+			div.info-contact
+				h3 Телефон
+				a(href="tel:+7(499)702-31-31") +7 (499) 702-31-31
+		div.info-contacts.info-contacts--production
+			h2.info-contacts__title Производство
+			div.info-contact
+				h3 Адрес
+				address.
+					Владимирская область, Суздальский район, МО Боголюбовское с/п, село Новое,
+					ул. Рабочая, д.3

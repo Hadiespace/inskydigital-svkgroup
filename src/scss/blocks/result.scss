@@ -83,6 +83,10 @@
 	margin: -15px;
 	padding-top: 150px;
 
+	span {
+		cursor: default !important;
+	}
+
 	@media (max-width: 1399px) {
 		padding-top: 100px;
 	}
@@ -203,6 +207,14 @@
 		fill: none;
 		stroke: $default-color;
 		stroke-width: 2px;
+		transition: stroke .1s;
+	}
+
+	&:hover,
+	&:focus {
+		svg {
+			stroke: $accent-color;
+		}
 	}
 
 	@media (max-width: 767px) {
@@ -217,6 +229,7 @@
 }
 
 .search-result__input {
+	outline: none;
 	border: none;
 	padding: 19px 0;
 	width: 100%;
@@ -233,6 +246,11 @@
 		font-size: 16px;
 		line-height: 24px;
 	}
+}
+
+.search-result__form:hover,
+.search-result__form:focus-within {
+	outline: 2px solid $default-color;
 }
 
 // ITEM RESULT

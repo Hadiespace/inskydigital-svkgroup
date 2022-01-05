@@ -15,6 +15,7 @@ export const createConstructor = () => {
 
 export const changeConstructorImage = (swiper) => {
 	const constructorItems = constructor.querySelectorAll('.constructor__item');
+	constructorItems[16].style.transition = 'opacity .6s';
 
 	window.addEventListener('scroll', () => {
 		if (window.scrollY >= constructor.offsetTop && window.scrollY <= constructor.clientHeight + constructor.offsetTop) {
@@ -87,72 +88,34 @@ export const changeConstructorImage = (swiper) => {
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 600) {
-				swiper.slideTo(2);
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 600) {
 				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
 				constructorItems[12].classList.add('constructor__item--active');
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 650) {
 				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[11].classList.add('constructor__item--active');
+				constructorItems[13].classList.add('constructor__item--active');
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 700) {
 				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[10].classList.add('constructor__item--active');
+				constructorItems[14].classList.add('constructor__item--active');
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 750) {
 				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[9].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 800) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[8].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 850) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[7].classList.add('constructor__item--active');
+				constructorItems[15].classList.add('constructor__item--active');
+				constructorItems[15].style.transition = '';
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 900) {
 				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[6].classList.add('constructor__item--active');
+				constructorItems[15].style.transition = 'opacity .6s';
+				constructorItems[16].classList.add('constructor__item--active');
 			}
 
-			if (window.scrollY >= constructor.offsetTop + 950) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[5].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 1000) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[4].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 1050) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[3].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 1100) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[2].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 1150) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[1].classList.add('constructor__item--active');
-			}
-
-			if (window.scrollY >= constructor.offsetTop + 1200) {
-				constructorItems.forEach((item) => item.classList.remove('constructor__item--active'));
-				constructorItems[0].classList.add('constructor__item--active');
+			if (window.scrollY >= constructor.offsetTop + 600) {
+				swiper.slideTo(2);
 			}
 
 			if (window.scrollY >= constructor.offsetTop + 900) {

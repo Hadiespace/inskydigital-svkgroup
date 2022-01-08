@@ -103,6 +103,7 @@
 		display: grid;
 		flex-shrink: 0;
 		max-width: 100%;
+		transition-duration: 0ms !important;
 
 		h3 {
 			margin: 0 0 50px;

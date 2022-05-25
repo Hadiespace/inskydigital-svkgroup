@@ -90,7 +90,7 @@
 		grid-column-gap: 44px;
 		grid-template-columns: 44px max-content;
 		font-family: $accent-font;
-		font-size: 70px;
+		font-size: 50px;
 		line-height: 90px;
 		color: $default-color;
 		opacity: .2;
@@ -131,7 +131,7 @@
 
 	@media (max-width: 1399px) {
 		a {
-			font-size: 50px;
+			font-size: 36px;
 			line-height: 70px;
 
 			span {
@@ -146,8 +146,8 @@
 
 	@media (max-width: 1023px) {
 		a {
-			font-size: 32px;
-			line-height: 40px;
+			font-size: 24px;
+			line-height: 50px;
 
 			span {
 				margin-left: -30px;
@@ -159,10 +159,10 @@
 		}
 	}
 
-	@media (max-width: 619px) {
+	@media (max-width: 767px) {
 		a {
-			font-size: 24px;
-			line-height: 32px;
+			font-size: 36px;
+			line-height: 70px;
 
 			span {
 				margin-left: -40px;
@@ -174,10 +174,26 @@
 		}
 	}
 
-	@media (max-width: 479px) {
+	@media (max-width: 599px) {
 		a {
-			font-size: 36px;
-			line-height: 60px;
+			font-size: 24px;
+			line-height: 32px;
+		}
+	}
+
+	@media (max-width: 379px) {
+		a {
+			margin-left: -10px;
+			font-size: 20px;
+			line-height: 32px;
+
+			span {
+				margin-left: -44px;
+			}
+
+			img {
+				transform: scale(.4);
+			}
 		}
 	}
 }
@@ -203,10 +219,6 @@
 	}
 
 	@media (max-width: 767px) {
-		width: calc(50% - 10px);
-	}
-
-	@media (max-width: 479px) {
 		display: none;
 	}
 }
